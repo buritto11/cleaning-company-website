@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Уборка квартиры | ООО «КлинМастер»</title>
+    <meta name="description" content="Профессиональная уборка квартир: генеральная, поддерживающая, после ремонта. ООО КлинМастер — гарантия качества.">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23007BFF'%3E%3Cpath d='M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z'/%3E%3C/svg%3E">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body style="padding-top: 80px;">
+
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="preloader-spinner"></div>
+    </div>
+
+    <!-- Theme Toggle -->
+    <button class="theme-toggle" title="Переключить тему">🌙</button>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
+                КлинМастер
+            </a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="services.html">Услуги</a></li>
+                    <li><a href="about.html">О компании</a></li>
+                    <li><a href="flat.html" style="color: var(--primary-color);">Уборка квартиры</a></li>
+                    <li><a href="house.html">Уборка дома</a></li>
+                </ul>
+            </nav>
+            <div class="header-contact">
+                <a href="tel:+78005553535" class="phone-number">+7 (800) 555-35-35</a>
+                <button class="burger-menu">☰</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu-overlay">
+        <button class="close-mobile-menu">&times;</button>
+        <ul class="mobile-nav-links">
+            <li><a href="index.html">Главная</a></li>
+            <li><a href="services.html">Все услуги</a></li>
+            <li><a href="about.html">О компании</a></li>
+            <li><a href="flat.html">Уборка квартиры</a></li>
+            <li><a href="house.html">Уборка дома</a></li>
+        </ul>
+        <div class="mobile-menu-actions">
+            <a href="#" class="btn btn-outline open-modal" data-target="orderModal">Рассчитать точную стоимость</a>
+            <a href="#" class="btn btn-outline open-modal" data-target="orderModal">Заказать уборку</a>
+        </div>
+    </div>
+
+    <!-- Content Section -->
+    <section class="section">
+        <div class="container">
+            <div class="grid-2">
+                <div>
+                    <h1 style="font-size: 2.5rem; margin-bottom: 20px;">Профессиональная уборка квартир</h1>
+                    <p style="font-size: 1.1rem; margin-bottom: 30px;">Сделаем вашу квартиру идеально чистой, пока вы занимаетесь своими делами. Выберите нужный тип уборки, и наша команда приедет со всем необходимым оборудованием и химией.</p>
+
+                    <div style="margin-bottom: 30px;">
+                        <img src="assets/images/flat.png" alt="Уборка квартиры" style="border-radius: var(--border-radius); width: 100%;">
+                    </div>
+
+                    <h3 style="margin-bottom: 15px;">Что входит в уборку?</h3>
+                    <ul style="list-style-position: inside; margin-bottom: 30px; color: var(--text-muted); line-height: 1.8;">
+                        <li>✔️ Сухая и влажная уборка полов</li>
+                        <li>✔️ Обеспыливание всех доступных поверхностей</li>
+                        <li>✔️ Мытье зеркал и стеклянных поверхностей</li>
+                        <li>✔️ Чистка и дезинфекция санузла (ванна, унитаз, раковина)</li>
+                        <li>✔️ Мытье кухонных фасадов и рабочей зоны</li>
+                        <li>✔️ Вынос мусора</li>
+                    </ul>
+
+                    <div style="background-color: var(--secondary-color); padding: 25px; border-radius: var(--border-radius); border-left: 4px solid var(--primary-color);">
+                        <div style="font-weight: bold; font-size: 1.2rem; color: var(--primary-color);">от 2 500 ₽</div>
+                        <p style="margin: 10px 0 0; font-size: 0.9rem;">Точная стоимость рассчитывается индивидуально в зависимости от площади и степени загрязнения.</p>
+                    </div>
+                </div>
+                
+                <!-- Заказ прямо на странице -->
+                <div class="card" style="position: sticky; top: 120px;">
+                    <h3 style="text-align: center; margin-bottom: 20px;">Рассчитать стоимость и заказать</h3>
+                    <form class="ajax-form">
+                        <div class="form-group">
+                            <label class="form-label" for="name2">Ваше имя</label>
+                            <input type="text" id="name2" name="name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="phone2">Телефон</label>
+                            <input type="tel" id="phone2" name="phone" class="form-control" required placeholder="+7 (___) ___-__-__" autocomplete="off" value="+7 ">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="serviceType2">Тип уборки</label>
+                            <select id="serviceType2" name="serviceType" class="form-control">
+                                <option value="Поддерживающая уборка квартиры">Поддерживающая уборка</option>
+                                <option value="Генеральная уборка квартиры">Генеральная уборка</option>
+                                <option value="Уборка квартиры после ремонта">После ремонта</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 15px;">Рассчитать и заказать</button>
+                        <div class="form-status"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" style="padding: var(--spacing-md) 0;">
+        <div class="container">
+            <div class="footer-bottom" style="border: none; padding: 0;">
+                &copy; 2026 ООО «КлинМастер». Все права защищены.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal Form -->
+    <div class="modal-overlay" id="orderModal">
+        <div class="modal">
+            <button class="close-modal">&times;</button>
+            <h3 style="margin-bottom: 24px; text-align: center;">Оставить заявку</h3>
+            <form class="ajax-form">
+                <div class="form-group">
+                    <label class="form-label" for="nameModal">Ваше имя</label>
+                    <input type="text" id="nameModal" name="name" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="phoneModal">Ваш телефон</label>
+                    <input type="tel" id="phoneModal" name="phone" class="form-control" required placeholder="+7 (___) ___-__-__" autocomplete="off" value="+7 ">
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="serviceTypeModal">Тип уборки</label>
+                    <select id="serviceTypeModal" name="serviceType" class="form-control">
+                        <option value="Поддерживающая уборка квартиры">Поддерживающая уборка</option>
+                        <option value="Генеральная уборка квартиры">Генеральная уборка</option>
+                        <option value="Уборка квартиры после ремонта">После ремонта</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Оставить заявку</button>
+                <div class="form-status"></div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Scroll To Top -->
+    <button class="scroll-top" title="Наверх">↑</button>
+
+    <!-- Floating Messenger -->
+    <div class="floating-messenger">
+        <div class="messenger-links">
+            <a href="https://wa.me/78005553535" target="_blank" class="messenger-link whatsapp">💬 WhatsApp</a>
+            <a href="https://t.me/klinmaster_cleaning" target="_blank" class="messenger-link telegram">✈️ Telegram</a>
+        </div>
+        <button class="messenger-toggle" title="Написать нам">💬</button>
+    </div>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
