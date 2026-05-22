@@ -72,6 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const originalBtnText = submitBtn.textContent;
             const statusEl = form.querySelector('.form-status');
             const formData = new FormData(form);
+            const consentCheckbox = form.querySelector('input[name="personalDataConsent"]');
 
             // Простая валидация (дополнительно к HTML required)
             const phone = formData.get('phone');
@@ -84,19 +85,29 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
 
+            if (consentCheckbox && !consentCheckbox.checked) {
+                if(statusEl) {
+                    statusEl.textContent = 'Необходимо согласиться с обработкой персональных данных';
+                    statusEl.className = 'form-status error';
+                    statusEl.style.display = 'block';
+                }
+                return;
+            }
+
             submitBtn.disabled = true;
             submitBtn.textContent = 'Отправка...';
             
             if(statusEl) statusEl.style.display = 'none';
 
             try {
-                // Имитация отправки для локальной работы (дипломная демонстрация без PHP-сервера)
-                // Это предотвратит ошибку "Failed to fetch" при открытии через file://
-                await new Promise(resolve => setTimeout(resolve, 1000));
+                const response = await fetch('handler.php', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                const result = await response.json();
                 
-                const result = { success: true };
-                
-                if (result.success) {
+                if (response.ok && result.success) {
                     if(statusEl) {
                         statusEl.textContent = 'Спасибо! Заявка успешно отправлена. Мы свяжемся с вами в течение 5 минут.';
                         statusEl.className = 'form-status success';
